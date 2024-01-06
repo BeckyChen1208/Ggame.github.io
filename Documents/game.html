@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            background-color: #254760;
+            color: #feffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        #game-container {
+            margin-top: 50px;
+        }
+
+        #start-btn, #game-content {
+            display: none;
+        }
+
+        #game-content img {
+            max-width: 100%;
+            max-height: 400px;
+            margin-top: 20px;
+        }
+
+        #score {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animated {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>遊戲網站</h1>
+
+    <div id="game-container" class="animated">
+        <button id="start-btn" onclick="startGame()">開始遊戲</button>
+        <div id="game-content">
+            <h2>遊戲標題</h2>
+            <p>遊戲介紹...</p>
+            <img src="back.png" alt="Game Screenshot">
+            <p id="score">得分: <span id="score-value">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        function startGame() {
+            // 播放哭泣聲音效
+            var audio = new Audio('back.mp3');
+            audio.play();
+
+            // 開始遊戲邏輯
+            // 這裡你可以放入你的遊戲程式碼，例如 Canvas 遊戲或其他互動元素
+            // 在遊戲進行中，你可以更新分數等資訊
+
+            // 隱藏開始按鈕，顯示遊戲內容
+            document.getElementById('start-btn').style.display = 'none';
+            document.getElementById('game-content').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
